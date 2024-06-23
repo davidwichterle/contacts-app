@@ -13,7 +13,9 @@
   </thead>
   <tbody>
     <% @contacts.each do |contact| %>
-      <%= render contact %>
+      <% if contact.user == current_user %>
+        <%= render contact %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
